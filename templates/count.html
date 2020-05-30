@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Count</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <h2>There are {{ count }} words in your text.</h2>
+    <h3>Here is your text: <blockquote style="color:darkblue"> {{ wordlist }} </blockquote></h3>
+
+    <h1>Word Count:</h1>
+    {% for word, counttotal in dictionary %}
+        <p>- The word "<b></b><span style='color: red'> {{ word }} </span></b>" appeared "<b></b><span style='color: red'> {{ counttotal }} </span></b>" times.</p>
+    {% endfor %}
+</body>
+</html>
